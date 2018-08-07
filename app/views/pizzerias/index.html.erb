@@ -1,0 +1,10 @@
+<h1 style='margin-top:100px;font-size:2rem'>Our official pizzeria directory (<%= link_to 'Click here to add a new Pizzeria', new_pizzeria_path %>)</h1>
+
+<% @pizzerias.each do |pizzeria| %>
+  <h1 style='font-size:1.5rem;margin-top:50px'>Pizzeria Name:
+    <%= link_to pizzeria do  %>
+      <%= pizzeria.name %>
+    <% end %>
+  </h1>
+  <p>Address: <%= pizzeria.address %></p>
+<% end %>

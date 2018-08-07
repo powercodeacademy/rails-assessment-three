@@ -1,0 +1,13 @@
+<h1 style='margin-top:100px'> Record a new Pizzeria in NYC</h1>
+
+<div class='form-container'>
+  <%= form_for(@pizzeria) do |f| %>
+
+    <label>Pizzeria Name: <%= f.text_field :name %></label><br />
+
+    <label>Address: <%= f.text_field :address %></label><br />
+
+    <%= f.submit %>
+
+  <% end %>
+</div>

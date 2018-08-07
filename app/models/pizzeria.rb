@@ -1,0 +1,3 @@
+class Pizzeria < ApplicationRecord
+  
+end
