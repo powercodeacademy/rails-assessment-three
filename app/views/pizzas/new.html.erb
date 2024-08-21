@@ -1,0 +1,11 @@
+<div class='form-container'>
+  <%= form_for(@pizza) do |f| %>
+
+    <label>Pizza Name: <%= f.text_field :name %></label><br />
+
+    <label>Description: <%= f.text_field :description %></label><br />
+
+    <%= f.submit %>
+
+  <% end %>
+</div>
