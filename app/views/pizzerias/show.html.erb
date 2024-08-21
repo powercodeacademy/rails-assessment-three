@@ -1,2 +1,4 @@
 <h1 style='margin-top:100px'>Pizzeria name: <%= @pizzeria.name %></h1>
 <p>Address: <%= @pizzeria.address %></p>
+
+<%= link_to "Tell us about a great Pizza you had at #{@pizzeria.name}", new_pizzeria_pizza_path(@pizzeria) %>

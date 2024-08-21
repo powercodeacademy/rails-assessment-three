@@ -17,7 +17,8 @@ class PizzeriasController < ApplicationController
   end
 
   private
+
   def pizzeria_params
-    params.require(:pizzeria).permit(:name,:address)
+    params.require(:pizzeria).permit(:name, :address)
   end
 end

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get '/pizzerias/new', to: 'pizzerias#new', as: 'new_pizzeria'
-  post '/pizzerias', to: 'pizzerias#create', as: 'pizzerias'
-  get '/pizzerias/:id', to: 'pizzerias#show', as: 'pizzeria'
-  get '/pizzerias', to: 'pizzerias#index'
+  resources :pizzerias, only: %i[index show new create] do
+    resources :pizzas, only: :new
+  end
 end
