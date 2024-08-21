@@ -1,11 +1,11 @@
-<div class='form-container'>
-  <%= form_for(@pizza) do |f| %>
+<%= form_with(model: [@pizzeria, @pizza]) do |f| %>
 
     <label>Pizza Name: <%= f.text_field :name %></label><br />
 
     <label>Description: <%= f.text_field :description %></label><br />
 
+    <%= f.hidden_field :pizzeria_id, value: @pizzeria.id %>
+
     <%= f.submit %>
 
-  <% end %>
-</div>
+<% end %>
