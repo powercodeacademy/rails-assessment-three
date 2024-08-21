@@ -5,7 +5,13 @@ class PizzeriasController < ApplicationController
 
   def create
     @pizzeria = Pizzeria.create(pizzeria_params)
-    redirect_to @pizzeria
+
+    if @pizzeria.save
+      redirect_to @pizzeria
+    else
+      flash.now.alert = @pizzeria.errors.full_messages.to_sentence
+      render :new
+    end
   end
 
   def show

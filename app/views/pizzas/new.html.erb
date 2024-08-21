@@ -1,7 +1,3 @@
-<% if flash[:alert] %>
-  <div class="alert"><%= flash[:alert] %></div>
-<% end %>
-
 <h1>Tell us about this pizza you had at <%= @pizzeria.name %></h1>
 
 <%= form_with model: [@pizzeria, @pizza], local: true do |form| %>
