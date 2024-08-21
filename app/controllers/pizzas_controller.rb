@@ -13,8 +13,9 @@ class PizzasController < ApplicationController
     @pizzeria = @pizza.pizzeria
 
     if @pizza.save
-      redirect_to @pizza, alert: 'Pizza was created.'
+      redirect_to @pizza
     else
+      flash.now[:alert] = "Name and Description must be present"
       render :new
     end
   end
