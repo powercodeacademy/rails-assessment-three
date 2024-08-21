@@ -1,0 +1,14 @@
+<% if flash[:alert] %>
+  <p style="color: red" class="error-message"><%= flash[:alert] %></p>
+<% end %>
+
+<%= form_with(model: [@pizzeria, @pizza],  local: true ) do |f| %>
+
+    <label>Pizza Name: <%= f.text_field :name %></label><br />
+
+    <label>Description: <%= f.text_field :description %></label><br />
+
+    <%= f.hidden_field :pizzeria_id %>
+
+    <%= f.submit %>
+<% end %>
