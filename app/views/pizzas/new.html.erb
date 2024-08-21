@@ -1,5 +1,16 @@
 <h2>Tell us about this pizza you had at <%= @pizzeria.name %></h2>
 
+  <% if @pizza.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pizza.errors.count, "error") %> prohibited this pizza from being saved:</h2>
+      <ul>
+        <% @pizza.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 <%= form_with model:[@pizzeria, @pizza], local: true do |form| %>
   <%= form.hidden_field :pizzeria_id, value: @pizzeria.id %>
   <%= form.label :name %>
