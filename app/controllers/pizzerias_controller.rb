@@ -4,8 +4,12 @@ class PizzeriasController < ApplicationController
   end
 
   def create
-    @pizzeria = Pizzeria.create(pizzeria_params)
-    redirect_to @pizzeria
+    @pizzeria = Pizzeria.new(pizzeria_params)
+    if @pizzeria.save
+      redirect_to pizzeria_path(@pizzeria), notice: 'Pizzeria was successfully created.'
+    else
+      render :new
+    end
   end
 
   def show

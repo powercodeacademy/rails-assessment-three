@@ -1,5 +1,16 @@
 <h1 style='margin-top:100px'> Record a new Pizzeria in NYC</h1>
 
+<% if @pizzeria.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@pizzeria.errors.count, "error") %> prohibited this pizzeria from being saved:</h2>
+    <ul>
+      <% @pizzeria.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class='form-container'>
   <%= form_for(@pizzeria) do |f| %>
 

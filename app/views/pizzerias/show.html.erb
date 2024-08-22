@@ -1,2 +1,14 @@
 <h1 style='margin-top:100px'>Pizzeria name: <%= @pizzeria.name %></h1>
 <p>Address: <%= @pizzeria.address %></p>
+
+
+<p>
+  <%= link_to "Tell us about a great Pizza you had at #{@pizzeria.name}", new_pizzeria_pizza_path(@pizzeria) %>
+</p>
+
+<h3>Great eats from <%= @pizzeria.name %>:</h3>
+
+<% @pizzeria.pizzas.each do |pizza| %>
+  <p> <%= link_to pizza.name, pizzeria_pizza_path(pizza)%></p>
+<% end %>
+
