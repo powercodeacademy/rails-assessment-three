@@ -1,5 +1,5 @@
 class PizzasController < ApplicationController
-  before_action :set_pizza, only: [:show, :edit, :update]
+  before_action :set_pizza, only: [:show, :edit]
 
   def index
     @pizzas = Pizza.all
@@ -15,11 +15,12 @@ class PizzasController < ApplicationController
   def edit
   end
 
-  def update
-    if @pizza.update(pizza_params)
+  def create
+    @pizza = Pizza.new(pizza_params)
+    if @pizza.save
       redirect_to @pizza
     else
-      render :edit
+      render :new
     end
   end
 
