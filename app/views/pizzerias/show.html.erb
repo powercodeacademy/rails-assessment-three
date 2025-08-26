@@ -1,2 +1,10 @@
 <h1 style='margin-top:100px'>Pizzeria name: <%= @pizzeria.name %></h1>
 <p>Address: <%= @pizzeria.address %></p>
+
+<h3>Our Pizzas:</h3>
+  <ul>
+  <% @pizzeria.pizzas.each do |pizza| %>
+     <l1><%= link_to pizza.name, pizza %> Description: <%= pizza.description %> </li>
+  <% end  %>
+  </ul>
+</br>

@@ -13,4 +13,13 @@
       <%= yield %>
     </div>
   </body>
+
+  <footer class="footer">
+  <h4>Quick Navigation Links</h4>
+  <div>
+    <%= link_to 'Add New Pizza', new_pizza_path %>
+    <%= link_to 'View All Pizzerias', pizzerias_path %>
+    <%= link_to 'View All Pizzas', pizzas_path %>
+  </div>
+</footer>
 </html>
