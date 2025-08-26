@@ -6,5 +6,6 @@ class PizzasController < ApplicationController
   end 
 
   def show 
+    @pizza = Pizza.find(params[:id])
   end
 end
