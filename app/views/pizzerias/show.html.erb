@@ -4,7 +4,7 @@
 <h3>Our Pizzas:</h3>
   <ul>
   <% @pizzeria.pizzas.each do |pizza| %>
-     <l1><%= link_to pizza.name, pizza %> Description: <%= pizza.description %> </li>
+     <li><%= link_to pizza.name, pizza %> Description: <%= pizza.description %> </li> </br>
   <% end  %>
   </ul>
 </br>
