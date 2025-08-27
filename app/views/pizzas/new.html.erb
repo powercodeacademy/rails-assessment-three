@@ -1,0 +1,12 @@
+<h1>Pizza Pizza</h1>
+
+
+<%= form_with model: @pizza, local: true do |form| %>
+  <%= form.label :name  %>
+  <%= form.text_field :name %>
+  
+  <%= form.label :description, "Body:" %>
+  <%= form.text_area :description %>
+  
+  <%= form.submit "Create Pizza " %>
+<% end %>

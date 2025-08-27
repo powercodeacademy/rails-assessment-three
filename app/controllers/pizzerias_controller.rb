@@ -13,7 +13,7 @@ class PizzeriasController < ApplicationController
 
   def create
     @pizzeria = Pizzeria.create(pizzeria_params)
-    redirect_to @pizzeria
+    redirect_to pizzeria_path(@pizzeria)
   end
 
   private

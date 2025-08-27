@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 #   1
+Pizza.destroy_all
 Pizzeria.destroy_all
  
 Pizzeria.create!([{
@@ -21,3 +22,9 @@ Pizzeria.create!([{
   name: "San Matteo NYC",
   address: "1559 2nd Ave, New York, NY 10028"
 }])
+
+Pizza.create!([
+  { name: "Margherita", description: "Classic tomato and mozzarella", pizzeria: Pizzeria.find_by(name: "Sottocasa NYC") },
+  { name: "Diavola", description: "Spicy salami and mozzarella", pizzeria: Pizzeria.find_by(name: "PizzArte") },
+  { name: "Quattro Formaggi", description: "Four cheese pizza", pizzeria: Pizzeria.find_by(name: "San Matteo NYC") }
+])
