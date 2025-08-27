@@ -1,8 +1,8 @@
 <h1 style='margin-top:100px'>Pizzeria name: <%= @pizzeria.name %></h1>
 <p>Address: <%= @pizzeria.address %></p>
-<%= link_to "Tell us about a great pizza you had at #{@pizzeria.name}", "/pizzas/new" %>
+<%= link_to "Tell us about a great pizza you had at #{@pizzeria.name}", new_pizzeria_pizza_path(@pizzeria) %>
 
 <h1 style='margin-top:50px'>Great eats from <%= @pizzeria.name %></h1>
 <% @pizzeria.pizzas.each do |pizza| %>
-  <%= link_to pizza.name, pizza_path(pizza) %>
+  <%= link_to pizza.name, pizzeria_pizza_path(@pizzeria, pizza) %>
 <% end %>
