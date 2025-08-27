@@ -1,0 +1,17 @@
+<h1 style='margin-top:100px'> Tell us about this pizza you had at <%= @pizza.pizzeria.name %> </h1>
+
+<div class='form-container'>
+  <%= form_for [@pizzeria, @pizza], local: true do |f| %>
+    <div>
+      <%= f.label :name, "Pizza Name" %><br />
+      <%= f.text_field :name %>
+    </div>
+
+    <div>
+      <%= f.label :description, "Description" %><br />
+      <%= f.text_field :description %>
+
+    <%= f.submit "Create Pizza" %>
+
+  <% end %>
+</div>
