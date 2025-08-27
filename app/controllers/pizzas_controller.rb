@@ -1,6 +1,7 @@
 class PizzasController < ApplicationController
   def show
-    @pizza = Pizza.find(params[:id])
+    @pizzeria = Pizzeria.find(params[:pizzeria_id])
+    @pizza = @pizzeria.pizzas.find(params[:id])
   end
 
   def new
@@ -13,7 +14,7 @@ class PizzasController < ApplicationController
     @pizza = @pizzeria.pizzas.build(pizza_params)
 
     if @pizza.save
-      redirect_to [@pizzeria, @pizza]
+      redirect_to pizzeria_pizza_path(@pizzeria, @pizza)
     else
       render :new
     end
