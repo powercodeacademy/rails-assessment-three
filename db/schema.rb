@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2017_08_14_143728) do
+ActiveRecord::Schema[7.1].define(version: 2025_08_27_172233) do
+  create_table "pizzas", force: :cascade do |t|
+    t.integer "pizzeria_id"
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pizzeria_id"], name: "index_pizzas_on_pizzeria_id"
+  end
+
   create_table "pizzerias", force: :cascade do |t|
     t.string "name"
     t.string "address"
