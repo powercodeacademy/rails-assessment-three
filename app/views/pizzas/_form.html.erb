@@ -1,0 +1,10 @@
+<div class="form-container">
+  <%= form_with local: true, method: pizzeria_pizzas_path(pizzeria_id: @pizzeria.id) do |f|%>
+    <%= f.hidden_field :pizzeria_id, value: @pizzeria.id %>
+    <%= f.label :name %> <br>
+    <%= f.text_field :name %> <br>
+    <%= f.label :description %> <br>
+    <%= f.text_field :description %> <br>
+    <%= f.submit "Create Pizza" %> <br>
+  <% end %>
+</div>
