@@ -13,7 +13,7 @@ class PizzasController < ApplicationController
     @pizza = @pizzeria.pizzas.build(pizza_params)
 
     if @pizza.save
-      redirect_to @pizza
+      redirect_to [@pizzeria, @pizza]
     else
       render :new
     end
