@@ -1,1 +1,13 @@
-New Pizza Form
+<h1>Tell us about this pizza you had at <%= @pizzeria.name %></h1>
+
+<%= form_with model: [@pizzeria, @pizza], local: true do |f| %>
+  <%= f.hidden_field :pizzeria_id %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.submit %>
+<% end %>
