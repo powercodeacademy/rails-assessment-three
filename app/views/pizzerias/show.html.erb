@@ -4,5 +4,5 @@
 <br>
 <h2>Great eats from <%= @pizzeria.name %>:</h2>
 <% @pizzeria.pizzas.each do |pizza| %>
-  <%= link_to pizza.name, pizzeria_pizza_path(pizzeria_id: @pizzeria.id, pizza: pizza) %>
+  <%= link_to pizza.name, pizzeria_pizza_path(pizzeria_id: @pizzeria.id, id: pizza.id) %><br>
 <% end %>
