@@ -1,12 +1,14 @@
-<h1>Pizza Pizza</h1>
+<h1 style='margin-top:100px'> Record a new Pizzeria in NYC</h1>
 
+<div class='form-container'>
 
-<%= form_with model: @pizza, local: true do |form| %>
-  <%= form.label :name  %>
-  <%= form.text_field :name %>
-  
-  <%= form.label :description, "Body:" %>
-  <%= form.text_area :description %>
-  
-  <%= form.submit "Create Pizza " %>
-<% end %>
+  <%= @pizzeria.name %></label><br />
+  <%=  @pizzeria.address %></label><br /> 
+
+  <%= link_to "Tell us about a great Pizza you had at Sottocasa NYC" %>
+
+    <% @pizzeria.pizzas.each do |pizza| %>
+    <%= link_to @pizzeria.pizza, new_pizzeria_pizza(@pizzeria) %>
+    <%= f.submit %>
+  <% end %>
+</div>

@@ -8,7 +8,8 @@ Pizza name: <%= @pizza.name %></h1>
 
 <ul>
  <% @pizza.pizzeria.pizzas.each do |pizza| %>
-    <li><%= link_to pizza.name, pizzeria_pizza_path(@pizza.pizzeria, pizza)%> </li> 
+
+    <li><%= link_to pizza.name, pizzeria_pizza(@pizza.pizzeria, pizza)%> </li> 
     <% pizza.description %>
  <% end %>
 </ul>
