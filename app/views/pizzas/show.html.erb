@@ -1,0 +1,11 @@
+<h1><%= @pizza.name %></h1>
+
+<p>
+  Description:
+  <%= @pizza.description %>
+</p>
+
+<p>
+  Pizzeria:
+  <%= link_to @pizza.pizzeria.name, @pizza.pizzeria %>
+</p>
