@@ -1,2 +1,13 @@
 <h1 style='margin-top:100px'>Pizzeria name: <%= @pizzeria.name %></h1>
 <p>Address: <%= @pizzeria.address %></p>
+<%= link_to "Tell us about a great pizza you had at #{@pizzeria.name}", new_pizzeria_pizza_path(@pizzeria) %>
+<hr>
+<% if @pizzeria.pizzas.count.zero? %>
+  <p><i>There are currently no pizzas logged for this pizzeria. Be the first to add one!</i></p>
+<% else %>
+  <ul>
+    <% @pizzeria.pizzas.each do |pizza| %>
+      <li><%= link_to pizza.name, pizzeria_pizza_path(pizza) %></li>
+    <% end %>
+  </ul>
+<% end %>

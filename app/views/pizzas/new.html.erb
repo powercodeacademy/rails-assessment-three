@@ -1,0 +1,13 @@
+<h1 style='margin-top:100px'> Record a new Pizza for <%= link_to @pizzeria.name, pizzeria_path(@pizzeria) %></h1>
+
+<div class='form-container'>
+  <%= form_with model: [@pizzeria, @pizza] do |f| %>
+
+    <label>Pizza Name: <%= f.text_field :name, required: true %></label><br />
+
+    <label>Description: <%= f.text_field :description, required: true %></label><br />
+
+    <%= f.submit %>
+
+  <% end %>
+</div>
