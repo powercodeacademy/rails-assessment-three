@@ -1,0 +1,13 @@
+<h1 >Add a Pizza to <%= @pizzeria.name %></h1>
+
+<div>
+  <%= form_for([@pizzeria, @pizza]) do |f| %>
+
+    <label>Pizza Name: <%= f.text_field :name %></label><br />
+
+    <label>Description: <%= f.text_field :description %></label><br />
+
+    <%= f.submit %>
+
+  <% end %>
+</div>
