@@ -1,0 +1,16 @@
+<h1>Add a Pizza</h1>
+
+<%= form_with model: @pizza, local: true do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.label :pizzeria_id, "Pizzeria" %>
+  <%= f.collection_select :pizzeria_id, @pizzerias, :id, :name, prompt: "Select a pizzeria" %>
+
+  <%= f.submit "Create Pizza" %>
+
+<% end %>
